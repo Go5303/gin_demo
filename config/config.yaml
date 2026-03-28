@@ -4,11 +4,11 @@ server:
 
 # Database
 database:
-  host: rm-uf6wv18zh100n05ia.mysql.rds.aliyuncs.com
+  host: 127.0.0.1
   port: 3306
-  user: oa_sit
-  password: msbzkMB5QA4lrvSz
-  dbname: sit-oa
+  user: oa
+  password: 123456
+  dbname: oa
   charset: utf8mb4
   table_prefix: ""
   max_idle_conns: 10
@@ -18,9 +18,9 @@ database:
 
 # Redis
 redis:
-  host: r-uf6535bf3e0276d4.redis.rds.aliyuncs.com
+  host: 127.0.0.1
   port: 6379
-  password: 6m1KdB3x7
+  password: 123456
   db: 0
   prefix: ""
   pool_size: 10
@@ -33,12 +33,7 @@ session:
 # Security
 security:
   md5_key: ""
-  api_salt: "gjdffjiewls@#$fsd!!jsfjifjasdfeifja3432432s"
-
-# JWT
-jwt:
-  secret: "jwt-secret-key"
-  expire: 864000  # 10 days in seconds
+  api_salt: "123456"
 
 # Log
 log:

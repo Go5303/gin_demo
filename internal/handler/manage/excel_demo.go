@@ -17,7 +17,7 @@ func ExcelDemo(c *gin.Context) {
 
 	// ============ Title: merged across A1:H1 ============
 	eb.Merge("A1", "H1").
-		Set("A1", "我大OA - 2026年3月员工考勤汇总表").
+		Set("A1", "OA - 2026年3月员工考勤汇总表").
 		SetRangeStyle("A1", "H1", excel.TitleStyle()).
 		RowHeight(1, 42)
 
@@ -34,8 +34,8 @@ func ExcelDemo(c *gin.Context) {
 	eb.Merge("B3", "B4").Set("B3", "姓名")
 	eb.Merge("C3", "C4").Set("C3", "工号")
 	eb.Merge("D3", "D4").Set("D3", "部门")
-	eb.Merge("E3", "F3").Set("E3", "出勤情况")     // merged two cols
-	eb.Merge("G3", "H3").Set("G3", "异常统计")      // merged two cols
+	eb.Merge("E3", "F3").Set("E3", "出勤情况") // merged two cols
+	eb.Merge("G3", "H3").Set("G3", "异常统计") // merged two cols
 
 	// Second level header
 	eb.Set("E4", "应出勤(天)").Set("F4", "实出勤(天)")

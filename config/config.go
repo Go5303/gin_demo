@@ -20,7 +20,6 @@ type AppConfig struct {
 	Redis    RedisConfig    `yaml:"redis"`
 	Session  SessionConfig  `yaml:"session"`
 	Security SecurityConfig `yaml:"security"`
-	JWT      JWTConfig      `yaml:"jwt"`
 	Log      LogConfig      `yaml:"log"`
 
 	Environment string `yaml:"environment"`
@@ -74,11 +73,6 @@ type SessionConfig struct {
 type SecurityConfig struct {
 	MD5Key  string `yaml:"md5_key"`
 	APISalt string `yaml:"api_salt"`
-}
-
-type JWTConfig struct {
-	Secret string `yaml:"secret"`
-	Expire int    `yaml:"expire"`
 }
 
 type LogConfig struct {
