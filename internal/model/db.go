@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	"git.woda.ink/Woda_OA/config"
+	"github.com/Go5303/gin_demo/config"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"

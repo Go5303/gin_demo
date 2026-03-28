@@ -8,10 +8,10 @@ import (
 	"os/signal"
 	"syscall"
 
-	"git.woda.ink/Woda_OA/config"
-	"git.woda.ink/Woda_OA/internal/model"
-	"git.woda.ink/Woda_OA/pkg/logger"
-	"git.woda.ink/Woda_OA/router"
+	"github.com/Go5303/gin_demo/config"
+	"github.com/Go5303/gin_demo/internal/model"
+	"github.com/Go5303/gin_demo/pkg/logger"
+	"github.com/Go5303/gin_demo/router"
 	"github.com/gin-gonic/gin"
 )
 

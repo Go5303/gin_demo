@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"strings"
 
-	"git.woda.ink/Woda_OA/pkg/cache"
-	"git.woda.ink/Woda_OA/pkg/response"
+	"github.com/Go5303/gin_demo/pkg/cache"
+	"github.com/Go5303/gin_demo/pkg/response"
 	"github.com/gin-gonic/gin"
 )
 

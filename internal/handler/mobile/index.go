@@ -1,9 +1,9 @@
 package mobile
 
 import (
-	svc "git.woda.ink/Woda_OA/internal/service/mobile"
-	"git.woda.ink/Woda_OA/pkg/logger"
-	"git.woda.ink/Woda_OA/pkg/response"
+	svc "github.com/Go5303/gin_demo/internal/service/mobile"
+	"github.com/Go5303/gin_demo/pkg/logger"
+	"github.com/Go5303/gin_demo/pkg/response"
 	"github.com/gin-gonic/gin"
 )
 

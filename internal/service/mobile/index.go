@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
-	"git.woda.ink/Woda_OA/internal/model"
-	"git.woda.ink/Woda_OA/pkg/cache"
-	"git.woda.ink/Woda_OA/pkg/errcode"
+	"github.com/Go5303/gin_demo/internal/model"
+	"github.com/Go5303/gin_demo/pkg/cache"
+	"github.com/Go5303/gin_demo/pkg/errcode"
 )
 
 // IndexReq is the index request body

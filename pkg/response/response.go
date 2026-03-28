@@ -4,7 +4,7 @@ import (
 	"errors"
 	"net/http"
 
-	"git.woda.ink/Woda_OA/pkg/errcode"
+	"github.com/Go5303/gin_demo/pkg/errcode"
 	"github.com/gin-gonic/gin"
 )
 

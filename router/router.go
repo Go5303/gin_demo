@@ -1,10 +1,10 @@
 package router
 
 import (
-	"git.woda.ink/Woda_OA/config"
-	manageHandler "git.woda.ink/Woda_OA/internal/handler/manage"
-	mobileHandler "git.woda.ink/Woda_OA/internal/handler/mobile"
-	"git.woda.ink/Woda_OA/internal/middleware"
+	"github.com/Go5303/gin_demo/config"
+	manageHandler "github.com/Go5303/gin_demo/internal/handler/manage"
+	mobileHandler "github.com/Go5303/gin_demo/internal/handler/mobile"
+	"github.com/Go5303/gin_demo/internal/middleware"
 	"github.com/gin-gonic/gin"
 )
 

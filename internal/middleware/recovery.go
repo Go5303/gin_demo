@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"git.woda.ink/Woda_OA/pkg/response"
+	"github.com/Go5303/gin_demo/pkg/response"
 	"github.com/gin-gonic/gin"
 )
 

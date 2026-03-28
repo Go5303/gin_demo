@@ -1,8 +1,8 @@
 package manage
 
 import (
-	svc "git.woda.ink/Woda_OA/internal/service/manage"
-	"git.woda.ink/Woda_OA/pkg/response"
+	svc "github.com/Go5303/gin_demo/internal/service/manage"
+	"github.com/Go5303/gin_demo/pkg/response"
 	"github.com/gin-gonic/gin"
 )
 

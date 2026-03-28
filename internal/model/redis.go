@@ -6,8 +6,8 @@ import (
 	"log"
 	"time"
 
-	"git.woda.ink/Woda_OA/config"
-	"git.woda.ink/Woda_OA/pkg/cache"
+	"github.com/Go5303/gin_demo/config"
+	"github.com/Go5303/gin_demo/pkg/cache"
 	"github.com/go-redis/redis/v8"
 )
 

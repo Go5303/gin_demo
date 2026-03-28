@@ -1,4 +1,4 @@
-module git.woda.ink/Woda_OA
+module github.com/Go5303/gin_demo
 
 go 1.24.0
 
