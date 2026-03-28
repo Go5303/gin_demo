@@ -11,6 +11,7 @@ import (
 // Setup initializes all routes
 func Setup(r *gin.Engine, cfg *config.AppConfig) {
 	// Global middleware
+	r.Use(middleware.RequestID())
 	r.Use(middleware.CORS())
 	r.Use(middleware.RequestLogger())
 	r.Use(middleware.Recovery())

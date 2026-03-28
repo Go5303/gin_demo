@@ -1,9 +1,9 @@
 package middleware
 
 import (
-	"log"
 	"time"
 
+	"github.com/Go5303/gin_demo/pkg/logger"
 	"github.com/gin-gonic/gin"
 )
 
@@ -20,7 +20,7 @@ func RequestLogger() gin.HandlerFunc {
 		method := c.Request.Method
 		path := c.Request.URL.String()
 
-		log.Printf("[HTTP] %d | %13v | %15s | %-7s %s",
+		logger.WithCtx(c).Infof("[HTTP] %d | %13v | %15s | %-7s %s",
 			status, latency, clientIP, method, path)
 	}
 }

@@ -24,7 +24,6 @@ func Login(c *gin.Context) {
 		response.BizErr(c, err)
 		return
 	}
-
-	logger.L.Info("mobile login success", "username", req.Username)
+	logger.WithCtx(c).Info("mobile login success", "username", req.Username)
 	response.SuccessMsg(c, data, "登录成功")
 }

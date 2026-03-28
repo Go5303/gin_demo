@@ -4,6 +4,7 @@ import (
 	"os"
 	"path/filepath"
 
+	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )
@@ -61,4 +62,12 @@ func Init(level string, logPath string) {
 
 	core := zapcore.NewTee(cores...)
 	L = zap.New(core, zap.AddCaller()).Sugar()
+}
+
+// WithCtx returns a logger with request_id from gin.Context
+func WithCtx(c *gin.Context) *zap.SugaredLogger {
+	if requestID, exists := c.Get("request_id"); exists {
+		return L.With("request_id", requestID)
+	}
+	return L
 }
