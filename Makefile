@@ -1,6 +1,6 @@
 .PHONY: build run clean tidy
 
-APP_NAME := woda_oa
+APP_NAME := gin_demo
 CMD_DIR := ./cmd
 
 build:
