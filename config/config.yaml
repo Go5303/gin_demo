@@ -1,0 +1,50 @@
+server:
+  port: 8080
+  mode: debug  # debug / release / test
+
+# Database - from PHP $config['db']['1']
+database:
+  host: rm-uf6wv18zh100n05ia.mysql.rds.aliyuncs.com
+  port: 3306
+  user: oa_sit
+  password: msbzkMB5QA4lrvSz
+  dbname: sit-oa
+  charset: utf8mb4
+  table_prefix: ""
+  max_idle_conns: 10
+  max_open_conns: 100
+  max_lifetime: 3600  # seconds
+  log_level: warn  # silent / error / warn / info
+
+# Redis - from PHP $config['redis']
+redis:
+  host: r-uf6535bf3e0276d4.redis.rds.aliyuncs.com
+  port: 6379
+  password: 6m1KdB3x7
+  db: 0
+  prefix: ""
+  pool_size: 10
+
+# Session
+session:
+  expire: 3600  # seconds
+  cookie_prefix: "29E6_"
+
+# Security
+security:
+  md5_key: ""  # Will be loaded from PHP config or set manually
+  api_salt: "gjdffjiewls@#$fsd!!jsfjifjasdfeifja3432432s"
+
+# JWT
+jwt:
+  secret: "jwt-secret-key"
+  expire: 864000  # 10 days in seconds
+
+# Log
+log:
+  error_path: /alidata/log/php/log_error
+  level: info  # debug / info / warn / error
+
+# Environment
+environment: development
+debug: false

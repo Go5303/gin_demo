@@ -1,0 +1,20 @@
+# Binary
+main
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.claude
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Config with secrets (use config.yaml.example for template)
+# config/config.yaml
+
+# Logs
+*.log
+
