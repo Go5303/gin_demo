@@ -17,7 +17,7 @@ func MD5(s string) string {
 	return fmt.Sprintf("%x", md5.Sum([]byte(s)))
 }
 
-// MD6 matches PHP md6() function
+// MD6
 func MD6(str, salt, preStr string) string {
 	if preStr == "" {
 		preStr = "agg_"
@@ -25,7 +25,7 @@ func MD6(str, salt, preStr string) string {
 	return MD5(preStr + MD5(str) + salt)
 }
 
-// Encrypt matches PHP encrypt() function exactly
+// Encrypt
 // This is needed for compatibility with existing cookies/tokens
 func Encrypt(txt, key string) string {
 	if txt == "" {
@@ -49,7 +49,7 @@ func Encrypt(txt, key string) string {
 		knum += int(key[i])
 	}
 
-	mdKeyFull := MD5(MD5(MD5(key+string(ch1)) + string(ch2) + ikey) + string(ch3))
+	mdKeyFull := MD5(MD5(MD5(key+string(ch1))+string(ch2)+ikey) + string(ch3))
 	start := nhnum % 8
 	length := knum%8 + 16
 	mdKey := mdKeyFull[start : start+length]
@@ -81,7 +81,7 @@ func Encrypt(txt, key string) string {
 	return result
 }
 
-// Decrypt matches PHP decrypt() function exactly
+// Decrypt
 func Decrypt(txt, key string) string {
 	if txt == "" {
 		return txt
@@ -136,7 +136,7 @@ func Decrypt(txt, key string) string {
 	txt = txt[:pos] + txt[pos+1:]
 
 	nhnum := nh1 + nh2 + nh3
-	mdKeyFull := MD5(MD5(MD5(key+string(ch1)) + string(ch2) + ikey) + string(ch3))
+	mdKeyFull := MD5(MD5(MD5(key+string(ch1))+string(ch2)+ikey) + string(ch3))
 	start := nhnum % 8
 	length := knum%8 + 16
 	mdKey := mdKeyFull[start : start+length]

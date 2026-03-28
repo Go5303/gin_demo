@@ -9,7 +9,6 @@ import (
 )
 
 // GetClientIP extracts the real client IP from request headers
-// Matches PHP getUserIp() / getIp() logic
 func GetClientIP(c *gin.Context) string {
 	// Check HTTP_CLIENT_IP
 	if ip := c.GetHeader("Client-Ip"); ip != "" && ip != "unknown" {
@@ -33,7 +32,6 @@ func sanitizeIP(ip string) string {
 	return ""
 }
 
-// GetEmptyValue returns default if value is empty (matches PHP getEmptyValue)
 func GetEmptyValue(value, defaultVal string) string {
 	if value == "" {
 		return defaultVal
@@ -41,16 +39,6 @@ func GetEmptyValue(value, defaultVal string) string {
 	return value
 }
 
-// TrimParam trims whitespace from request parameter (matches PHP trimRequest)
-func TrimParam(c *gin.Context, key string) string {
-	val := c.Query(key)
-	if val == "" {
-		val = c.PostForm(key)
-	}
-	return strings.TrimSpace(val)
-}
-
-// GetParam gets a parameter from query or form (matches PHP $_REQUEST)
 func GetParam(c *gin.Context, key string) string {
 	val := c.Query(key)
 	if val == "" {

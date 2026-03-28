@@ -8,7 +8,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// Standard response codes matching PHP system
 const (
 	CodeSuccess  = 200
 	CodeArgError = 80000 // ERROR_CODE_ARG
@@ -17,14 +16,13 @@ const (
 )
 
 // R is the standard API response structure
-// Matches PHP output_data_msg / output_error format
 type R struct {
 	Code    int         `json:"code"`
 	Message string      `json:"message"`
 	Data    interface{} `json:"data"`
 }
 
-// Success returns a success response (equivalent to PHP output_data_msg)
+// Success
 func Success(c *gin.Context, data interface{}) {
 	if data == nil {
 		data = struct{}{}
@@ -48,7 +46,7 @@ func SuccessMsg(c *gin.Context, data interface{}, message string) {
 	})
 }
 
-// Error returns an error response (equivalent to PHP output_error)
+// Error
 func Error(c *gin.Context, message string) {
 	c.JSON(http.StatusOK, R{
 		Code:    CodeError,

@@ -10,6 +10,7 @@ import (
 
 	"git.woda.ink/Woda_OA/config"
 	"git.woda.ink/Woda_OA/internal/model"
+	"git.woda.ink/Woda_OA/pkg/logger"
 	"git.woda.ink/Woda_OA/router"
 	"github.com/gin-gonic/gin"
 )
@@ -24,19 +25,25 @@ func main() {
 	if err != nil {
 		log.Fatalf("[Config] Failed to load config: %v", err)
 	}
-	log.Printf("[Config] Loaded from %s", *configPath)
+
+	// Initialize logger
+	logger.Init(cfg.Log.Level, cfg.Log.ErrorPath+"/app.log")
+	defer logger.L.Sync()
+	logger.L.Infof("config loaded from %s", *configPath)
 
 	// Initialize MySQL
 	if err := model.InitDB(&cfg.Database); err != nil {
-		log.Fatalf("[DB] %v", err)
+		logger.L.Fatalf("[DB] %v", err)
 	}
 	defer model.CloseDB()
+	logger.L.Info("MySQL connected")
 
 	// Initialize Redis
 	if err := model.InitRedis(&cfg.Redis); err != nil {
-		log.Printf("[Redis] Warning: %v (continuing without redis)", err)
+		logger.L.Warnf("Redis init failed: %v (continuing without redis)", err)
 	} else {
 		defer model.CloseRedis()
+		logger.L.Info("Redis connected")
 	}
 
 	// Set Gin mode
@@ -61,12 +68,12 @@ func main() {
 
 	addr := fmt.Sprintf(":%d", cfg.Server.Port)
 	go func() {
-		log.Printf("[Server] Woda OA starting on %s", addr)
+		logger.L.Infof("server starting on %s", addr)
 		if err := r.Run(addr); err != nil {
-			log.Fatalf("[Server] Failed to start: %v", err)
+			logger.L.Fatalf("server failed to start: %v", err)
 		}
 	}()
 
 	<-quit
-	log.Println("[Server] Shutting down...")
+	logger.L.Info("server shutting down...")
 }

@@ -2,7 +2,7 @@ server:
   port: 8080
   mode: debug  # debug / release / test
 
-# Database - from PHP $config['db']['1']
+# Database
 database:
   host: rm-uf6wv18zh100n05ia.mysql.rds.aliyuncs.com
   port: 3306
@@ -16,7 +16,7 @@ database:
   max_lifetime: 3600  # seconds
   log_level: warn  # silent / error / warn / info
 
-# Redis - from PHP $config['redis']
+# Redis
 redis:
   host: r-uf6535bf3e0276d4.redis.rds.aliyuncs.com
   port: 6379
@@ -32,7 +32,7 @@ session:
 
 # Security
 security:
-  md5_key: ""  # Will be loaded from PHP config or set manually
+  md5_key: ""
   api_salt: "gjdffjiewls@#$fsd!!jsfjifjasdfeifja3432432s"
 
 # JWT
@@ -42,7 +42,7 @@ jwt:
 
 # Log
 log:
-  error_path: /alidata/log/php/log_error
+  error_path: /var/log/gin_demo
   level: info  # debug / info / warn / error
 
 # Environment
