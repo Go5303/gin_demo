@@ -1,6 +1,7 @@
 server:
   port: 8080
   mode: debug  # debug / release / test
+  timeout: 20  # seconds, max request lifetime
 
 # Database
 database:

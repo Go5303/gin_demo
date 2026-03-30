@@ -27,8 +27,9 @@ type AppConfig struct {
 }
 
 type ServerConfig struct {
-	Port int    `yaml:"port"`
-	Mode string `yaml:"mode"`
+	Port    int    `yaml:"port"`
+	Mode    string `yaml:"mode"`
+	Timeout int    `yaml:"timeout"`
 }
 
 type DatabaseConfig struct {
