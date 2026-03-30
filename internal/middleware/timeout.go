@@ -2,9 +2,9 @@ package middleware
 
 import (
 	"context"
-	"net/http"
 	"time"
 
+	"github.com/Go5303/gin_demo/pkg/response"
 	"github.com/gin-gonic/gin"
 )
 
@@ -28,10 +28,8 @@ func Timeout(seconds int) gin.HandlerFunc {
 		case <-done:
 			return
 		case <-ctx.Done():
-			c.AbortWithStatusJSON(http.StatusGatewayTimeout, gin.H{
-				"code":    http.StatusGatewayTimeout,
-				"message": "request timeout",
-			})
+			c.Abort()
+			response.Error(c, "request timeout")
 		}
 	}
 }
